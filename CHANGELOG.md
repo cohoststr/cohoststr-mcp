@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.13.0 (2026-09-25)
+- New: `npx cohoststr-mcp setup` asks for your Guesty credentials in a hidden prompt and writes Claude Desktop\'s config for you (backup first, other servers kept, file readable by your account only). Nothing you type is printed.
+
 All notable changes to the Guesty MCP Server will be documented in this file.
 
 ## [0.12.0] - 2026-09-24

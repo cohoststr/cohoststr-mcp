@@ -1,6 +1,6 @@
 {
   "name": "cohoststr-mcp",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "description": "CohostSTR — MCP server for Guesty property management — 44 registered tools, all free (43 Guesty tools + get_license_info), + 7 addressable resource templates covering reservations, guests, messaging, pricing, revenue, tasks, webhooks, and IoT/property-health.",
   "main": "src/server.js",
   "bin": {

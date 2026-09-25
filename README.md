@@ -17,6 +17,16 @@ Full tool surface: **44 tools registered, all free** — 43 Guesty tools (23 rea
 
 ## Quick Start
 
+### Easiest: one command for Claude Desktop (your key is never shown on screen)
+
+```bash
+npx -y cohoststr-mcp setup
+```
+
+It asks for your Guesty Client ID and Client Secret in a hidden prompt (nothing is echoed, not even asterisks), backs up your existing Claude Desktop config, adds CohostSTR, and keeps any other MCP servers you already have. Then quit and reopen Claude Desktop. When Claude asks to use a tool that changes something, choose "Allow once" so you approve each change.
+
+### Or configure it yourself
+
 ```bash
 npx cohoststr-mcp
 ```
