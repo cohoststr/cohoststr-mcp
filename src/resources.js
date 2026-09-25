@@ -1,6 +1,6 @@
 // src/resources.js
 //
-// MCP Resources primitive for Guesty MCP Server — v0.9.0 (2026-04-20).
+// MCP Resources primitive for CohostSTR MCP server — v0.9.0 (2026-04-20).
 //
 // Exposes read-only addressable resources via guesty:// URI scheme so clients
 // can surface Guesty entities as @-mentionable context rather than forcing a

@@ -1,5 +1,5 @@
 /**
- * IoT Device Data Layer — Guesty MCP Server Enterprise
+ * IoT Device Data Layer — CohostSTR MCP server Enterprise
  *
  * Zero-dependency JSON file-based store for IoT device readings,
  * alerts, and property baselines.

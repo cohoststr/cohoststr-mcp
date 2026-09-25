@@ -1,5 +1,5 @@
 /**
- * Guesty MCP Server — IoT / Property Health (Internal Helpers + 1 MCP Tool)
+ * CohostSTR MCP server — IoT / Property Health (Internal Helpers + 1 MCP Tool)
  *
  * Phase 1: Core data collection + readiness scoring.
  * Phase 2: Vision-based photo comparison (planned).

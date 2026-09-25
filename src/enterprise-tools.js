@@ -1,5 +1,5 @@
 /**
- * Guesty MCP Server — Enterprise Tier Aggregation Tools
+ * CohostSTR MCP server — Enterprise Tier Aggregation Tools
  *
  * Three Enterprise-tier MCP tools that aggregate IoT device signal with
  * Guesty-side data (reservation status, review score, last-clean timestamp)

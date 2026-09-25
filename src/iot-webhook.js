@@ -1,5 +1,5 @@
 /**
- * IoT Webhook Receiver — Guesty MCP Server Enterprise
+ * IoT Webhook Receiver — CohostSTR MCP server Enterprise
  *
  * POST /webhooks/iot
  *

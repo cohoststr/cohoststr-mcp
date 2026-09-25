@@ -1,7 +1,7 @@
 import { createServer } from "http";
 
 /**
- * Streamable HTTP Transport for Guesty MCP Server
+ * Streamable HTTP Transport for CohostSTR MCP server
  * Allows the MCP server to be accessed via HTTP instead of stdio.
  * Useful for remote access, web integrations, and multi-client setups.
  */

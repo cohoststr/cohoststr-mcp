@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Guesty CLI - Command line tool for quick Guesty queries
- * Usage: guesty-cli <command> [options]
+ * Usage: cohoststr-cli <command> [options]
  */
 
 const GUESTY_CLIENT_ID = process.env.GUESTY_CLIENT_ID;

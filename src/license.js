@@ -1,5 +1,5 @@
 /**
- * Guesty MCP Server — License Key System (v3)
+ * CohostSTR MCP server — License Key System (v3)
  *
  * ALL_TOOLS_FREE=true — Owner ruling 2026-09-02 (TG 8336, "Make them free for
  *   now"). EVERY REGISTERED TOOL IS PERMITTED AT EVERY TIER, with or without a

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * HTTP/SSE transport for Guesty MCP Server
+ * HTTP/SSE transport for CohostSTR MCP server
  * Hosted version for Smithery/MCPMarket marketplace submission
  */
 import express from "express";
@@ -213,7 +213,7 @@ if (process.env.VERCEL) {
   // Vercel handles the HTTP layer
 } else {
   app.listen(PORT, () => {
-    console.log(`Guesty MCP HTTP Server on port ${PORT}`);
+    console.log(`CohostSTR MCP HTTP server on port ${PORT}`);
   });
 }
 
