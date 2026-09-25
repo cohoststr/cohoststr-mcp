@@ -1,6 +1,6 @@
 {
   "name": "cohoststr-mcp",
-  "version": "0.13.1",
+  "version": "0.13.2",
   "description": "CohostSTR — MCP server for Guesty property management — 44 registered tools, all free (43 Guesty tools + get_license_info), + 7 addressable resource templates covering reservations, guests, messaging, pricing, revenue, tasks, webhooks, and IoT/property-health.",
   "main": "src/server.js",
   "bin": {
@@ -40,7 +40,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cohoststr/cohoststr-mcp.git"
+    "url": "git+https://github.com/cohoststr/cohoststr-mcp.git"
   },
   "homepage": "https://github.com/cohoststr/cohoststr-mcp",
   "mcpName": "io.github.cohoststr/cohoststr-mcp",

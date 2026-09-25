@@ -9,11 +9,11 @@ An open-source, write-capable MCP (Model Context Protocol) server for [Guesty](h
 
 **Why MCP:** Guesty is one of the larger PMS platforms in the short-term-rental space and no MCP integration existed. Every major PMS will need one.
 
-**Built and run in production** on our own short-term rental portfolio. Node.js + MCP SDK + Express, MIT licensed. Things we learned: Guesty's `/reservations` endpoint only returns future data (we use the calendar endpoint for historical), and the SSE transport doesn't run on Vercel serverless (expected). **All 43 Guesty tools free.**
+**Built and run in production** on our own short-term rental portfolio. Node.js + MCP SDK + Express, MIT licensed. Things we learned: Guesty's `/reservations` endpoint only returns future data (we use the calendar endpoint for historical), and the SSE transport doesn't run on Vercel serverless (expected). **All 44 tools free.**
 
 Full tool surface: **44 tools registered, all free** — 43 Guesty tools (23 read-only, 16 write/guest-messaging including `get_conversations` and `draft_guest_reply`, and 4 IoT/property-health) plus `get_license_info`, which reports this server's own licensing state and makes no Guesty API call. **There are no paid tiers.** `GUESTY_MCP_LICENSE_KEY` is optional and does not change what you can call.
 
-> **Everything is free.** All 43 Guesty tools work with no license key. Paid-prefix keys are still recognized (they show up in `get_license_info`) but are not required and unlock nothing extra — there is nothing extra to unlock. Set or omit `GUESTY_MCP_LICENSE_KEY`; access is the same either way.
+> **Everything is free.** All 44 tools work with no license key. Paid-prefix keys are still recognized (they show up in `get_license_info`) but are not required and unlock nothing extra — there is nothing extra to unlock. Set or omit `GUESTY_MCP_LICENSE_KEY`; access is the same either way.
 
 ## Quick Start
 
@@ -23,7 +23,7 @@ Full tool surface: **44 tools registered, all free** — 43 Guesty tools (23 rea
 npx -y cohoststr-mcp setup
 ```
 
-It asks for your Guesty Client ID and Client Secret in a hidden prompt (nothing is echoed, not even asterisks), backs up your existing Claude Desktop config, adds CohostSTR, and keeps any other MCP servers you already have. Then quit and reopen Claude Desktop. When Claude asks to use a tool that changes something, choose "Allow once" so you approve each change.
+It asks for your Guesty Client ID and Client Secret in a hidden prompt (nothing is echoed, not even asterisks), backs up your existing Claude Desktop config, adds CohostSTR, and keeps any other MCP servers you already have. Then quit and reopen Claude Desktop. When Claude asks to use a tool that changes something, allow it one time only (not "always"), so you approve each change.
 
 ### Or configure it yourself
 
@@ -31,12 +31,18 @@ It asks for your Guesty Client ID and Client Secret in a hidden prompt (nothing 
 npx cohoststr-mcp
 ```
 
-Or add to your Claude Code settings (`~/.claude/settings.json`):
+Claude Code:
+
+```bash
+claude mcp add cohoststr -s user -e GUESTY_CLIENT_ID=your-client-id -e GUESTY_CLIENT_SECRET=your-client-secret -- npx -y cohoststr-mcp
+```
+
+Claude Desktop by hand: Settings > Developer > Edit Config, then add under `mcpServers`:
 
 ```json
 {
   "mcpServers": {
-    "guesty": {
+    "cohoststr": {
       "command": "npx",
       "args": ["-y", "cohoststr-mcp"],
       "env": {
@@ -50,12 +56,13 @@ Or add to your Claude Code settings (`~/.claude/settings.json`):
 
 ## Get Guesty API Credentials
 
-1. Log into [Guesty Dashboard](https://app.guesty.com)
-2. Go to **Settings > API** (or Marketplace > API Credentials)
-3. Create an API application with `open-api` scope
-4. Copy your **Client ID** and **Client Secret**
+Requires a Guesty plan with Open API access (Pro or Enterprise; not Lite, per [guesty.com/pricing](https://www.guesty.com/pricing/)).
 
-## All 43 Guesty Tools
+1. Log into [Guesty](https://app.guesty.com)
+2. Go to **Integrations > Developer tools > OAuth applications** and create a new API application ([Guesty quick-start guide](https://open-api-docs.guesty.com/docs/quick-start-guide))
+3. Copy your **Client ID** and **Client Secret** (Guesty shows the secret only once)
+
+## All 44 Tools
 
 ### Reservations & Guests
 | Tool | Description |

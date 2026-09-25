@@ -71,7 +71,7 @@ function ask(q) {
 export async function runSetup() {
   const cfgPath = opt("--config", defaultConfigPath());
   say("CohostSTR setup: connects CohostSTR to Claude Desktop on this computer.");
-  say("You need your Guesty Open API Client ID and Client Secret (Guesty > Integrations > API).");
+  say("You need your Guesty Open API Client ID and Client Secret (Guesty > Integrations > Developer tools > OAuth applications).");
   say("What you type below is NOT shown on screen, and it is saved only on this computer.\n");
 
   const id = await hidden("Guesty Client ID (hidden): ");
@@ -104,9 +104,9 @@ export async function runSetup() {
   fs.renameSync(tmp, cfgPath);
   try { fs.chmodSync(cfgPath, 0o600); } catch {}
 
-  say(`\nSaved to ${cfgPath} (readable by your user account only).`);
+  say(`\nSaved to ${cfgPath.replace(os.homedir(), "~")} (readable by your user account only).`);
   if (others.length) say(`Your other MCP servers were kept: ${others.join(", ")}`);
   if (cfg.mcpServers.guesty && NAME !== "guesty") say('Note: an older "guesty" entry is also present. Remove it if it runs the same server, or Claude will show the tools twice.');
   say("\nNext: quit Claude Desktop completely and open it again. Then ask it: \"List my reservations checking in this week.\"");
-  say('When Claude asks to use a tool that CHANGES something (sending a message, editing a reservation or a price), choose "Allow once", not "Always allow", so you approve each change.');
+  say('When Claude asks to use a tool that CHANGES something (sending a message, editing a reservation or a price), allow it one time only (not "always"), so you approve each change.');
 }

@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.13.2 (2026-09-25)
+- Guesty key location corrected to Integrations > Developer tools > OAuth applications (Guesty quick-start guide). Plan note: Open API needs Guesty Pro or Enterprise.
+- README: Claude Code install uses `claude mcp add`; Claude Desktop manual path is Settings > Developer > Edit Config.
+- setup prints the saved path with ~ for your home folder.
+
 ## 0.13.1 (2026-09-25)
 - The command-line tool is now `cohoststr-cli` (was `guesty-cli`). No alias is kept.
 
