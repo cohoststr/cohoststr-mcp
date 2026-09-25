@@ -1,0 +1,50 @@
+{
+  "name": "cohoststr-mcp",
+  "version": "0.12.0",
+  "description": "CohostSTR — MCP server for Guesty property management — 44 registered tools, all free (43 Guesty tools + get_license_info), + 7 addressable resource templates covering reservations, guests, messaging, pricing, revenue, tasks, webhooks, and IoT/property-health.",
+  "main": "src/server.js",
+  "bin": {
+    "cohoststr-mcp": "src/server.js",
+    "guesty-cli": "src/cli.js"
+  },
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "prepack": "node -e \"const fs=require('fs');const ok=['README.md','LICENSE'];const bad=fs.readdirSync('.').filter(f=>/^(README|LICEN[SC]E)/.test(f)&&!ok.includes(f));if(bad.length){console.error('PREPACK '+'ABORT: npm force-includes root README/LICENSE-prefixed files regardless of .npmignore. These WOULD be published: '+bad.join(', ')+'. Move them to _backups/.');process.exit(1)}\"",
+    "test": "rc=0; for t in tests/test-shapes.mjs tests/test-enterprise.js tests/test-iot.js tests/test-remote-toolsync.mjs tests/test-stdio-smoke.mjs tests/test-issue-1-filters.mjs tests/test-token-budget.mjs tests/test-drafts.mjs; do echo \"--- $t\"; node \"$t\" || rc=1; done; exit $rc"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "guesty",
+    "property-management",
+    "short-term-rental",
+    "airbnb",
+    "vrbo",
+    "vacation-rental",
+    "ai-agent",
+    "pms",
+    "iot",
+    "enterprise",
+    "hospitality",
+    "real-estate",
+    "automation"
+  ],
+  "author": "CohostSTR authors",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "latest",
+    "@vercel/analytics": "^2.0.1",
+    "express": "^5.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cohoststr/cohoststr-mcp.git"
+  },
+  "homepage": "https://github.com/cohoststr/cohoststr-mcp",
+  "mcpName": "io.github.cohoststr/cohoststr-mcp",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

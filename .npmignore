@@ -1,0 +1,62 @@
+tests/
+*.md
+!README.md
+!CHANGELOG.md
+!LICENSE
+.github/
+.gitignore
+docker-compose.yml
+Dockerfile
+.mcpregistry_*
+.env
+.env.*
+*.token
+credentials*
+tripadvisor-partnership-email.md
+HACKERNEWS-POST.md
+guesty-partnership-email.md
+
+# v0.9.3 hotfix — exclude editor/backup pollution from tarball
+# Caught 6 files in v0.9.2 tarball: license.js.bak.*, license.js.pre-*,
+# server.js.pre-*, package.json.pre-* — all are pre-edit safety snapshots.
+*.bak
+*.bak.*
+*.pre-*
+*.orig
+*.swp
+*.tmp
+
+# [packguard 2026-08-06 CTO] MEASURED, not assumed: npm 11.11.0 FORCE-INCLUDES
+# any PACKAGE-ROOT file whose name begins with README or LICENSE (case-sensitive,
+# position 0). .npmignore GETS NO VOTE on those names -- the *.pre-* rule above is
+# correct and simply UNREACHABLE for them. That is how README.md.pre-ipstrip-* and
+# README.md.pre-v095-lock-* reached the PUBLIC npm registry in v0.9.5, carrying the
+# PRE-honesty-scrub marketing copy (including a '779 downloads' claim that had been
+# deliberately removed from the shipped README).
+# The force-include is ROOT-ONLY -- a copy in a subdirectory IS excluded -- so editor
+# backups now live in _backups/. DO NOT put editor backups in the package root.
+_backups/
+
+# [2026-08-06 v0.9.9 CTO] BINARY ASSETS -- THE OTHER HALF OF A FIX I ONLY
+# HALF-MADE, RECORDED HERE SO THE SHAPE IS NOT REPEATED.
+# In v0.9.8 I closed the .gitignore/.npmignore divergence in ONE direction: I
+# copied this file's backup patterns into .gitignore and wrote in the commit
+# message that ".npmignore gets no vote on what git publishes." The converse was
+# exactly as true and I did not check it -- .GITIGNORE GETS NO VOTE ON WHAT NPM
+# PUBLISHES. hero.png (369,469 bytes) had NEVER been git-tracked (`git log --all
+# -- hero.png` empty, control on README.md non-empty), so the .gitignore line I
+# added changed nothing at all; the tarball was the only surface it was ever on,
+# and the tarball is the surface I did not audit. It shipped in every published
+# version through 0.9.8 -- 369 kB of 542 kB unpacked, 68% of every install --
+# referenced by ZERO files in the repo (grep across js/json/md/html outside
+# node_modules, with a positive control that returned three real files).
+# An MCP stdio server renders nothing and needs no images. Site artwork lives in
+# the website repo. Verify with `npm pack --dry-run --json`, never by eye.
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.ico
+*.mp4
+*.mov

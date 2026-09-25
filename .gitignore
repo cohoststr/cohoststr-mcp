@@ -1,0 +1,34 @@
+*.token
+.env
+.mcpregistry_*
+.token-cache.json
+node_modules/
+
+# [2026-08-06] EDITOR/BACKUP POLLUTION — MIRRORS .npmignore.
+# These patterns existed in .npmignore since the v0.9.3 hotfix and were NEVER
+# added here, so the two ignore files protected two different surfaces and only
+# one of them was covered. A `git add -A` today staged 23 untracked files —
+# five license/server backups, seven _backups/ snapshots, hero.png and six
+# internal marketing drafts — for a commit to a PUBLIC GitHub repo.
+# .npmignore gets no vote on what git publishes, and GitHub is the more
+# browsable of the two surfaces: a reader needs no install to see it.
+*.bak
+*.bak.*
+*.pre-*
+*.orig
+*.swp
+*.tmp
+_backups/
+.stale-drafts-backup-*/
+
+# Internal drafts — already excluded from the npm tarball by name in .npmignore.
+# Same decision, applied to the other publishing surface.
+HACKERNEWS-POST.md
+HN-PINNED-COMMENT.md
+MCPMARKET-LISTING.md
+PRODUCT-HUNT-LISTING.md
+SMITHERY_DESCRIPTION.md
+SMITHERY_VERIFICATION_REQUEST.md
+guesty-partnership-email.md
+tripadvisor-partnership-email.md
+hero.png

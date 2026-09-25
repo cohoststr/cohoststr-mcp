@@ -1,0 +1,17 @@
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    required:
+      - guestyClientId
+      - guestyClientSecret
+    properties:
+      guestyClientId:
+        type: string
+        description: Guesty OAuth2 Client ID
+      guestyClientSecret:
+        type: string
+        description: Guesty OAuth2 Client Secret
+  commandFunction:
+    |-
+      (config) => ({ command: 'npx', args: ['-y', 'cohoststr-mcp'], env: { GUESTY_CLIENT_ID: config.guestyClientId, GUESTY_CLIENT_SECRET: config.guestyClientSecret } })

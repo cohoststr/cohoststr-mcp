@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  guesty-mcp:
+    build: .
+    environment:
+      - GUESTY_CLIENT_ID=${GUESTY_CLIENT_ID}
+      - GUESTY_CLIENT_SECRET=${GUESTY_CLIENT_SECRET}
+      - WEBHOOK_PORT=3001
+      - MCP_HTTP_PORT=3002
+    ports:
+      - "3001:3001"
+      - "3002:3002"
+    restart: unless-stopped

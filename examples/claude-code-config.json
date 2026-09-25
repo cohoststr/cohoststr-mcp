@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "guesty": {
+      "command": "node",
+      "args": ["/path/to/cohoststr-mcp/src/server.js"],
+      "env": {
+        "GUESTY_CLIENT_ID": "your-client-id",
+        "GUESTY_CLIENT_SECRET": "your-client-secret"
+      }
+    }
+  }
+}

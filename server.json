@@ -1,0 +1,45 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.cohoststr/cohoststr-mcp",
+  "title": "CohostSTR (MCP server for Guesty)",
+  "description": "CohostSTR: MCP server for Guesty. 43 read/write tools, free. Grounded replies, policy screen.",
+  "version": "0.12.0",
+  "websiteUrl": "https://cohoststr.com",
+  "repository": {
+    "url": "https://github.com/cohoststr/cohoststr-mcp",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "cohoststr-mcp",
+      "version": "0.12.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "description": "Guesty OAuth2 Client ID",
+          "isRequired": true,
+          "format": "string",
+          "isSecret": true,
+          "name": "GUESTY_CLIENT_ID"
+        },
+        {
+          "description": "Guesty OAuth2 Client Secret",
+          "isRequired": true,
+          "format": "string",
+          "isSecret": true,
+          "name": "GUESTY_CLIENT_SECRET"
+        },
+        {
+          "description": "Optional. All tools are currently free; a key is recognized but does not change access.",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": true,
+          "name": "GUESTY_MCP_LICENSE_KEY"
+        }
+      ]
+    }
+  ]
+}
